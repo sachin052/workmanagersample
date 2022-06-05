@@ -59,23 +59,19 @@ class MainActivity : ComponentActivity() {
                         workInfos?.find { it.id == colorFilterRequest.id }
                     }
 
-
                     val imagerUri by derivedStateOf {
                         val downloadUri = downloadInfo?.outputData
                             ?.getString(WorkerKeys.IMAGE_URI)?.toUri()
                         val filterUri = colorFilterInfo?.outputData
                             ?.getString(WorkerKeys.FILTER_URI)?.toUri()
-
                         filterUri ?: downloadUri
                     }
-
 
                     Column(
                         Modifier.fillMaxSize(),
                         verticalArrangement = Arrangement.Center,
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
-
                         imagerUri?.let { uri ->
                             Image(
                                 painter = rememberImagePainter(data = uri),
@@ -88,7 +84,6 @@ class MainActivity : ComponentActivity() {
                                 .fillMaxWidth()
                                 .height(8.dp)
                         )
-
 
                         Button(
                             onClick = {
@@ -112,7 +107,6 @@ class MainActivity : ComponentActivity() {
                                 .height(8.dp)
                         )
 
-
                         when (downloadInfo?.state) {
                             WorkInfo.State.ENQUEUED -> Text(text = "Download enqueued")
                             WorkInfo.State.RUNNING -> Text(text = "Download Running ")
@@ -122,7 +116,6 @@ class MainActivity : ComponentActivity() {
                             WorkInfo.State.CANCELLED -> Text(text = "Download Canceled")
                             null -> Text(text = "Download Canceled")
                         }
-
 
                         Spacer(
                             modifier = Modifier
@@ -139,9 +132,7 @@ class MainActivity : ComponentActivity() {
                             WorkInfo.State.CANCELLED -> Text(text = "Filter Canceled")
                             null ->  Text(text = "Filter empty")
                         }
-
                     }
-
                 }
             }
         }

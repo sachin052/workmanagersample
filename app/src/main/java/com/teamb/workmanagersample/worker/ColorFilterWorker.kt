@@ -18,8 +18,8 @@ class ColorFilterWorker(
     private val context: Context,
     private val workerParameters: WorkerParameters
 ) : CoroutineWorker(context, workerParameters) {
-    override suspend fun doWork(): Result {
 
+    override suspend fun doWork(): Result {
         val imageFile = workerParameters.inputData
             .getString(WorkerKeys.IMAGE_URI)
             ?.toUri()
@@ -53,6 +53,5 @@ class ColorFilterWorker(
                 }
             }
         } ?: Result.failure()
-
     }
 }

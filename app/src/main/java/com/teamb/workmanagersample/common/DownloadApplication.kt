@@ -13,7 +13,6 @@ class DownloadApplication : Application() {
             "file_download",
             NotificationManager.IMPORTANCE_HIGH
         )
-
         val notificationManager = getSystemService(NotificationManager::class.java)
         notificationManager.createNotificationChannel(notificationChannel)
     }
