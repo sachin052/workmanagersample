@@ -4,7 +4,7 @@
     package="com.teamb.workmanagersample">
 
     <application
-        android:name=".DownloadApplication"
+        android:name=".common.DownloadApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"

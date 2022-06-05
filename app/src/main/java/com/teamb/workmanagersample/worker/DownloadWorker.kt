@@ -1,4 +1,4 @@
-package com.teamb.workmanagersample
+package com.teamb.workmanagersample.worker
 
 import android.content.Context
 import androidx.core.app.NotificationCompat
@@ -7,6 +7,9 @@ import androidx.work.CoroutineWorker
 import androidx.work.ForegroundInfo
 import androidx.work.WorkerParameters
 import androidx.work.workDataOf
+import com.teamb.workmanagersample.remote.FileApi
+import com.teamb.workmanagersample.R
+import com.teamb.workmanagersample.common.WorkerKeys
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext

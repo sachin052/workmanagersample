@@ -7,7 +7,7 @@ import androidx.core.net.toUri
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
 import androidx.work.workDataOf
-import com.teamb.workmanagersample.WorkerKeys
+import com.teamb.workmanagersample.common.WorkerKeys
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.File

@@ -1,4 +1,4 @@
-package com.teamb.workmanagersample
+package com.teamb.workmanagersample.common
 
 object WorkerKeys {
     const val ERROR_MSG = "error_msg"

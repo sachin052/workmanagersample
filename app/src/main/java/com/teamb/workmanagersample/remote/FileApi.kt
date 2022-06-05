@@ -1,4 +1,4 @@
-package com.teamb.workmanagersample
+package com.teamb.workmanagersample.remote
 
 import okhttp3.ResponseBody
 import retrofit2.Response

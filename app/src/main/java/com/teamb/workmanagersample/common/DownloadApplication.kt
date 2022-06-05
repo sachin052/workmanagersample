@@ -1,4 +1,4 @@
-package com.teamb.workmanagersample
+package com.teamb.workmanagersample.common
 
 import android.app.Application
 import android.app.NotificationChannel
