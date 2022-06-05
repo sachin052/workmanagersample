@@ -9,6 +9,7 @@ import androidx.work.WorkerParameters
 import androidx.work.workDataOf
 import com.teamb.workmanagersample.common.WorkerKeys
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 import java.io.File
 import java.io.FileOutputStream
@@ -34,6 +35,7 @@ class ColorFilterWorker(
             canvas.drawBitmap(resultBmp, 0f, 0f, paint)
 
             withContext(Dispatchers.IO) {
+                delay(2000)
                 val resultFile = File(context.cacheDir, "new_image.jpg")
                 val outputStream = FileOutputStream(resultFile)
                 val isSuccessFull = resultBmp.compress(
@@ -43,7 +45,7 @@ class ColorFilterWorker(
                 if (isSuccessFull) {
                     Result.success(
                         workDataOf(
-                            WorkerKeys.FILTER_URI to file.toUri().toString()
+                            WorkerKeys.FILTER_URI to resultFile.toUri().toString()
                         )
                     )
                 } else {

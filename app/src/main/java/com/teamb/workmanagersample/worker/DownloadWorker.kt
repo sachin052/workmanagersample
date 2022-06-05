@@ -17,10 +17,11 @@ import java.io.File
 import java.io.FileOutputStream
 import kotlin.random.Random
 
-class CoroutineDownloadWorker(
+class DownloadWorker(
     private val context: Context,
     params: WorkerParameters
 ) : CoroutineWorker(context, params) {
+
     override suspend fun doWork(): Result {
         startForegroundService()
         delay(5000)
@@ -43,7 +44,7 @@ class CoroutineDownloadWorker(
                     }
 
                 }
-                Result.success(
+                return@withContext Result.success(
                     workDataOf(
                         WorkerKeys.IMAGE_URI to file.toUri().toString()
                     )

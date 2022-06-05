@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.teamb.workmanagersample">
 
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
     <application
         android:name=".common.DownloadApplication"
         android:allowBackup="true"
